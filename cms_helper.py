@@ -15,6 +15,7 @@ HELPER_SETTINGS = dict(
         "multisite",
         "djangocms_text_ckeditor",
     ],
+    CMS_CONFIRM_VERSION4=True,
     LANGUAGE_CODE="en",
     LANGUAGES=(("en", gettext("English")),),
     CMS_LANGUAGES={
