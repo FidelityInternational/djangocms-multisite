@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.11", "3.10", "3.9"]
-        django: [42, 41, 32]
+        django: [42, 32]
         cms: [40]
         continue-on-error: [true]
     steps:
