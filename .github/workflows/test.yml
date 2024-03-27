@@ -46,7 +46,7 @@ jobs:
       run: |
         tox -e$TOX_ENV
         .tox/$TOX_ENV/bin/coverage xml
-        .tox/$TOX_ENV/bin/coveralls
+        .tox/$TOX_ENV/bin/coveralls --service=github
     - uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
