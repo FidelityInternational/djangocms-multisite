@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   test:
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.continue-on-error }}
     strategy:
@@ -23,9 +23,9 @@ jobs:
       uses: actions/cache@v3
       with:
         path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ matrix.toxenv }}
+        key: ${{ runner.os }}-pip-${{ format('py{0}-django{1}-cms{2}', matrix.python-version, matrix.django, matrix.cms) }}
         restore-keys: |
-          ${{ runner.os }}-pip-${{ matrix.toxenv }}
+          ${{ runner.os }}-pip-${{ format('py{0}-django{1}-cms{2}', matrix.python-version, matrix.django, matrix.cms) }}
     - name: Cache tox
       uses: actions/cache@v3
       with:
