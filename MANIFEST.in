@@ -1,4 +1,4 @@
-include Authors.rst
+include AUTHORS.rst
 include Makefile
 include CONTRIBUTING.rst
 include HISTORY.rst
