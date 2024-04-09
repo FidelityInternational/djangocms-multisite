@@ -1,3 +1,5 @@
+include Authors.rst
+include Makefile
 include CONTRIBUTING.rst
 include HISTORY.rst
 include LICENSE
