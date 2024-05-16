@@ -1,0 +1,4 @@
+{
+    "package-name": "djangocms-multisite-fil",
+    "installed-apps": ["djangocms_multisite"]
+}
