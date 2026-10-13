@@ -2,6 +2,9 @@ name: Tox tests
 
 on: [push, pull_request]
 
+permissions:
+  contents: read
+
 jobs:
   test:
     if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}

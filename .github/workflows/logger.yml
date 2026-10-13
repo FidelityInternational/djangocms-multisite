@@ -1,11 +1,16 @@
 name: Event Logger
 on: push
 
+permissions: {}
+
 jobs:
   log-github-event-goodies:
     name: "LOG Everything on GitHub Event"
     runs-on: ubuntu-latest
     steps:
       - name: Logging
-        run: |
-          echo '${{toJSON(github.event)}}'
+        # Pass the payload through an environment variable: interpolating
+        # ${{ }} into the script lets commit messages inject shell commands.
+        env:
+          GITHUB_EVENT_JSON: ${{ toJSON(github.event) }}
+        run: printf '%s\n' "$GITHUB_EVENT_JSON"
